@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melody Hub - Music Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 60px;
+      text-shadow: 2px 2px 6px black;
+    }
+    nav {
+      background: #222;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #e91e63; }
+    .container { width: 90%; margin: 40px auto; }
+    h2 { text-align: center; margin-bottom: 20px; color: #333; }
+
+    /* Products */
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 280px;
+      margin: 15px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .card:hover { transform: scale(1.05); }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    .price { color: #e91e63; font-size: 18px; font-weight: bold; }
+    .btn {
+      display: inline-block; margin: 10px; padding: 10px 15px;
+      background: #2196f3; color: white; border-radius: 5px;
+      cursor: pointer; transition: 0.3s; border: none;
+    }
+    .btn:hover { background: #1976d2; }
+
+    /* Reviews */
+    .reviews {
+      text-align: left;
+      padding: 10px;
+      border-top: 1px solid #eee;
+    }
+    .review {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+    .stars { color: gold; }
+
+    /* Blog */
+    .blog { display: flex; flex-wrap: wrap; justify-content: center; }
+    .blog-card {
+      width: 300px; margin: 15px; background: white; border-radius: 8px;
+      overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .blog-card:hover { transform: scale(1.03); }
+    .blog-card img { width: 100%; height: 180px; object-fit: cover; }
+    .blog-card h3 { padding: 10px; }
+
+    /* Article modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      overflow: auto;
+    }
+    .modal-content {
+      background: white;
+      margin: 50px auto;
+      padding: 20px;
+      width: 90%; max-width: 800px;
+      border-radius: 8px;
+    }
+    .close {
+      float: right;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header>
+    <h1>🎵 Melody Hub</h1>
+    <p>Your Ultimate Online Music Store</p>
+    <a href="#products" class="btn">Shop Now</a>
+  </header>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Products -->
+  <div class="container" id="products">
+    <h2>Our Best Sellers</h2>
+    <div class="products">
+
+      <!-- Guitar -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80" alt="Acoustic Guitar">
+        <h3>Acoustic Guitar</h3>
+        <p>Warm sound and durable build for beginners and pros.</p>
+        <p class="price">₹7,999</p>
+        <button class="btn">Add to Cart</button>
+        <div class="reviews">
+          <p class="review"><span class="stars">★★★★★</span> "Great guitar for beginners!" – Rahul</p>
+          <p class="review"><span class="stars">★★★★☆</span> "Lovely tone, but needs tuning often." – Meera</p>
+        </div>
+      </div>
+
+      <!-- Piano -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=800&q=80" alt="Grand Piano">
+        <h3>Grand Piano</h3>
+        <p>Premium sound quality for concerts & professionals.</p>
+        <p class="price">₹2,50,000</p>
+        <button class="btn">Add to Cart</button>
+        <div class="reviews">
+          <p class="review"><span class="stars">★★★★★</span> "Absolutely stunning sound!" – Aarav</p>
+          <p class="review"><span class="stars">★★★★☆</span> "Heavy but worth every penny." – Ananya</p>
+        </div>
+      </div>
+
+      <!-- Violin -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1619983081654-8f8e8cbd8782?auto=format&fit=crop&w=800&q=80" alt="Classic Violin">
+        <h3>Classic Violin</h3>
+        <p>Handcrafted beauty with smooth resonance.</p>
+        <p class="price">₹12,500</p>
+        <button class="btn">Add to Cart</button>
+        <div class="reviews">
+          <p class="review"><span class="stars">★★★★☆</span> "Lovely design, smooth bow." – Kavya</p>
+          <p class="review"><span class="stars">★★★☆☆</span> "Good for practice, not for concerts." – Neeraj</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Blog -->
+  <div class="container" id="blog">
+    <h2>Latest from Melody Hub</h2>
+    <div class="blog">
+      <div class="blog-card" onclick="openArticle(0)">
+        <img src="https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=800&q=80" alt="Guitars">
+        <h3>Top 5 Beginner Guitars</h3>
+      </div>
+      <div class="blog-card" onclick="openArticle(1)">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Studio">
+        <h3>Setting Up Your First Studio</h3>
+      </div>
+      <div class="blog-card" onclick="openArticle(2)">
+        <img src="https://images.unsplash.com/photo-1454922915609-78549ad709bb?auto=format&fit=crop&w=800&q=80" alt="Piano">
+        <h3>How to Tune Your Piano</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Modal -->
+  <div id="articleModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeArticle()">&times;</span>
+      <div id="articleContent"></div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="container" id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center">📧 support@melodyhub.com | ☎️ +91 98765 43210</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Melody Hub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Article contents
+    const articles = [
+      {
+        title: "Top 5 Beginner Guitars",
+        content: `
+          <p>Choosing your first guitar can be tough! Here are 5 guitars under ₹10,000 that are perfect for new players:</p>
+          <ul>
+            <li>Yamaha F310 – Reliable & popular worldwide</li>
+            <li>Cort AD810 – Great tone at budget price</li>
+            <li>Ibanez V50 – Solid build for practice</li>
+            <li>Fender FA-125 – Iconic design, beginner friendly</li>
+            <li>Juarez Acoustic – Ultra affordable option</li>
+          </ul>
+          <p>Each of these guitars is durable, has great sound, and is easy to tune – making your learning journey smooth.</p>
+        `
+      },
+      {
+        title: "Setting Up Your First Studio",
+        content: `
+          <p>You don’t need to spend lakhs to start recording music at home. Here’s the essential starter pack:</p>
+          <ul>
+            <li>USB Condenser Microphone – ₹3,000 to ₹7,000</li>
+            <li>Audio Interface (Focusrite Scarlett) – ₹12,000</li>
+            <li>Studio Headphones (Audio-Technica M20x) – ₹4,000</li>
+            <li>DAW Software (FL Studio / Ableton / GarageBand)</li>
+            <li>Foam panels for soundproofing – cheap DIY available</li>
+          </ul>
+          <p>Start simple, and upgrade as your skills and budget grow.</p>
+        `
+      },
+      {
+        title: "How to Tune Your Piano",
+        content: `
+          <p>Pianos need regular tuning to sound their best. Here are tips:</p>
+          <ul>
+            <li>Use a digital tuner to identify flat/sharp notes</li>
+            <li>Adjust using the tuning hammer carefully</li>
+            <li>Always tune upward (tightening strings)</li>
+            <li>If unsure, hire a professional tuner once a year</li>
+          </ul>
+          <p>A properly tuned piano will not only sound great but also last longer.</p>
+        `
+      }
+    ];
+
+    function openArticle(i) {
+      document.getElementById("articleContent").innerHTML =
+        `<h2>${articles[i].title}</h2>${articles[i].content}`;
+      document.getElementById("articleModal").style.display = "block";
+    }
+    function closeArticle() {
+      document.getElementById("articleModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
